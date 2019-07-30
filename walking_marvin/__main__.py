@@ -6,12 +6,6 @@ Uses OpenAI Gym with an environment called Marvin.
 The goal is to train Marvin to walk, using neuroevolution.
 """
 
-# metadata
-__author__ = "almayor"
-__version__ = "0.1.0"
-__license__ = "MIT"
-__url__ = "github.com/almayor"
-
 # dependencies
 from lib import Population, Config, NeuralNet
 import gym

@@ -74,7 +74,7 @@ class Config(argparse.ArgumentParser):
          default=150,
          metavar='INT',
          dest="population_count",
-         help='count of the population between each generation',
+         help='population count during each evolution episode',
          required=False)
 
       self.add_argument(
@@ -88,7 +88,7 @@ class Config(argparse.ArgumentParser):
          required=False)
 
       self.add_argument(
-         '-s',
+         '-m',
          '--max-steps',
          type=int,
          default=1000,

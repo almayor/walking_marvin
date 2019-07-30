@@ -17,7 +17,7 @@ development, we learned how to use neural networks to help Marvin
 get back on his feet, without using any libraries that do the goal of the
 project for us, like Evostra or Tensorflow.
 
-*To know more, see [official instructions](resources/walking-marvin.pdf)*
+*To know more, see [official instructions](resources/walking-marvin.pdf).*
 
 ### Usage
 
@@ -34,10 +34,10 @@ The program display log for each episode.
 | `–-walk (-w)`       | Display only walking process.                                                                 |
 | `–-video (-v)`      | Saves videos of the walking process.                                                          |
 | `–-name (-n)`       | Display the name of the game (environment).                                                   |
-| `--generation (-g)` | Change the maximum number of generations.                                                     |
-| `--population (-p)` | Count of the population between each generation.                                              |
-| `--rate (-r)`       | Mutation rate (recommended values in the range of decimals).                                  |
-| `--movement (-m)`   | umber of steps (movement) between each episode.                                               |
+| `--episodes (-e)` | Maximum number of evolution episodes                                                     |
+| `--population-count (-p)` | Population count during each evolution episode.                                              |
+| `--mutation-rate (-r)`       | Mutation rate (recommended values in the range of decimals).                                  |
+| `--max-steps (-m)`   | Number of steps in each evolution episode.                                               |
 | `–-load (-l)`       | Load weights for Marvin agent from a file. Skip training process if this option is specified. |
 | `–-save (-s)`       | Save weights to a file after running the program.                                             |
 | `–-quiet (-q)`      | Hide the program's log between each episode.                                                  |
@@ -62,7 +62,7 @@ To install and build all the dependcies in your virtual environment, use
 
 The following sources helped us during the development of this project:
 
-* This implementation of the project is largely based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin)
+* This implementation of the project is largely based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for sharing his code online as an education resource.
 * [OpenAI Gym documentation](https://gym.openai.com/docs)
 * [Neuroevolution - Wikipedia Article](https://en.wikipedia.org/wiki/Neuroevolution)
 * [Artificial Neural Network - Wikipedia Article](https://en.wikipedia.org/wiki/Artificial_neural_network)
