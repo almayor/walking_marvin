@@ -23,6 +23,7 @@ import sys
 """
 Main point of entry of the program.
 """
+
 config = Config()
 args = config.parse_args()
 env = gym.make(args.name)
