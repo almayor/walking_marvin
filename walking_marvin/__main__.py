@@ -21,7 +21,7 @@ Main point of entry of the program.
 config = Config()
 args = config.parse_args()
 env = gym.make(args.name)
-pop = Population(args.population_count, args.node_counts)
+pop = Population(args.popul_count, args.node_counts)
 
 if args.log:
 	sys.stdout = open(args.log_file, "a+")

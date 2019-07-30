@@ -69,7 +69,7 @@ class Config(argparse.ArgumentParser):
 
       self.add_argument(
          '-p',
-         '--population_count',
+         '--popul_count',
          type=int,
          default=150,
          metavar='INT',

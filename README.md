@@ -35,7 +35,7 @@ The program display log for each episode.
 | `–-video (-v)`      | Saves videos of the walking process.                                                          |
 | `–-name (-n)`       | Display the name of the game (environment).                                                   |
 | `--episodes (-e)` | Maximum number of evolution episodes                                                     |
-| `--population-count (-p)` | Population count during each evolution episode.                                              |
+| `--popul-count (-p)` | Population count during each evolution episode.                                              |
 | `--mutation-rate (-r)`       | Mutation rate (recommended values in the range of decimals).                                  |
 | `--max-steps (-m)`   | Number of steps in each evolution episode.                                               |
 | `–-load (-l)`       | Load weights for Marvin agent from a file. Skip training process if this option is specified. |
