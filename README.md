@@ -30,7 +30,7 @@ The program display log for each episode.
 **Advanced options:**
 
 | Flags               | Description                                                                                   |
-| :------------------ |:--------------------------------------------------------------------------------------------- |
+| :----------------------- |:--------------------------------------------------------------------------------------------- |
 | `–-walk (-w)`       | Display only walking process.                                                                 |
 | `–-video (-v)`      | Saves videos of the walking process.                                                          |
 | `–-name (-n)`       | Display the name of the game (environment).                                                   |
