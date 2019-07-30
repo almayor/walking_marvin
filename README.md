@@ -23,7 +23,7 @@ project for us, like Evostra or Tensorflow.
 
 **Basic form:**
 
-`./walking_marvin.py`
+`./walking_marvin`
 
 The program display log for each episode.
 
