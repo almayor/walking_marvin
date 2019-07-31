@@ -12,8 +12,12 @@ def softmax(x):
 
 
 def leaky_ReLu(x, alpha=-0.05):
-	return max(alpha * x, x)
+	return np.where(x > 0, x, alpha * x)
 
 
 def ReLu(x):
-	return max(0, x)
+	return np.where(x > 0, x, 0)
+
+
+def tanh(x):
+	return np.tanh(x)

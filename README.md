@@ -23,6 +23,7 @@ project for us, like Evostra or Tensorflow.
 
 **Basic form:**
 
+`make init`
 `./walking_marvin`
 
 The program display log for each episode.

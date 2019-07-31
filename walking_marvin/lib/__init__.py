@@ -1,6 +1,6 @@
 from lib.neural_net import NeuralNet
 from lib.population import Population
-from lib.enviroment import Marvin
+from lib.environment import Marvin
 from lib.config import Config
 from gym import envs
 

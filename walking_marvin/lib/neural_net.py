@@ -14,19 +14,18 @@ class NeuralNet:
 		self.biases = []
 		self.fit = 0.0
 		self.nlayers = len(node_counts)
-		for i in range(1, self.nlayers - 1):
+		for i in range(self.nlayers - 1):
 			# He initialization of weights
 			self.weights.append(
-				np.random.randn(
-					low=-1, high=1,
-					size=(self.node_counts[i + 1], self.node_counts[i]))
+				np.random.randn(self.node_counts[i + 1], self.node_counts[i])
 				* np.sqrt(2 / self.node_counts[i])
 			)
 			# zero initialization of biases
 			self.biases.append(
-				np.zeros((self.node_counts[i], self.node_counts[i + 1])))
+				np.zeros(self.node_counts[i + 1])
+			)
 
-	def get_output(self, inp, act_fn="leaky_ReLu", out_fn="softmax"):
+	def get_output(self, inp, act_fn="leaky_ReLu", out_fn="tanh"):
 		"""
 		Gets output of the neural network.
 		:param fun: type of activation function
@@ -38,7 +37,7 @@ class NeuralNet:
 		for i in range(self.nlayers - 2):
 			outp = act_fn(np.dot(self.weights[i], outp) + self.biases[i])
 		outp = out_fn(np.dot(self.weights[-1], outp) + self.biases[-1])
-		return np.argmax(outp, axis=0)
+		return outp
 
 	def print_weights(self):
 		"""

@@ -60,10 +60,10 @@ class Population:
 			progeny = NeuralNet(self.node_counts)
 			for i, weight in enumerate(progeny.weights):
 				mask = np.random.uniform(size=weight.shape) > mutation_rate
-				progeny.weights[mask] = founder.weights[mask]
+				progeny.weights[i][mask] = founder.weights[i][mask]
 			self.population.append(progeny)
 
-	def show(self, nnet, env, max_steps):
+	def display(self, nnet, env, max_steps):
 		"""
 		Displays the best neural network performing in the environment.
 		"""
@@ -72,7 +72,7 @@ class Population:
 		for _ in range(max_steps):
 			action = nnet.get_output(observation)
 			observation, reward, done, info = env.step(action)
-			env.render()
+			env.render("human")
 			if done:
 				break
 
