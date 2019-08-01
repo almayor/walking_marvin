@@ -1,4 +1,4 @@
-# 42 -- self-education
+# 42 –– self-education
 
 ## Walking Marvin
 
@@ -23,50 +23,44 @@ project for us, like Evostra or Tensorflow.
 
 **Basic form:**
 
-`make init`
-`./walking_marvin`
+To run the program do
+
+```
+make init
+python walking_marvin
+```
 
 The program display log for each episode.
 
 **Advanced options:**
 
-| Flags               | Description                                                                                   |
-| :----------------------- |:--------------------------------------------------------------------------------------------- |
-| `–-walk (-w)`       | Display only walking process.                                                                 |
-| `–-video (-v)`      | Saves videos of the walking process.                                                          |
-| `–-name (-n)`       | Display the name of the game (environment).                                                   |
-| `--episodes (-e)` | Maximum number of evolution episodes                                                     |
-| `--popul-count (-p)` | Population count during each evolution episode.                                              |
-| `--mutation-rate (-r)`       | Mutation rate (recommended values in the range of decimals).                                  |
-| `--max-steps (-m)`   | Number of steps in each evolution episode.                                               |
-| `–-load (-l)`       | Load weights for Marvin agent from a file. Skip training process if this option is specified. |
-| `–-save (-s)`       | Save weights to a file after running the program.                                             |
-| `–-quiet (-q)`      | Hide the program's log between each episode.                                                  |
-| `–-help (-h)`       | Display available commands and exit.                                                          |
-| `–-log`             | Save a log of each generation to a file. Expects a path.                                      |
-| `–-version`         | Show program's version number and exit.                                                       |
+To see a range of available options run 
 
-*If the program launches without arguments, display training process and walking
-process.*
+```
+python walking_marvin --help
+```
 
 ### Setup
 
 To install and build all the dependcies in your virtual environment, use
-`pip install -r requirements.txt`.
+`pip install -r requirements.txt`. This is already includes in the `make init` command.
 
 ### TODO
 
 * Make use of the average fitness of a generation, so it doesn't deviate from the parent.
-* Try to optimise topology, initialisation or propagation of neural networks and / or training process.
+* Try to optimise topology, initialisation or propagation of neural networks and / or the training process.
 
 ### Resources
 
-The following sources helped us during the development of this project:
+This implementation of the project is based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for sharing his code online as an education resource.
 
-* This implementation of the project is largely based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for sharing his code online as an education resource.
+The following sources helped me during the development of this project:
+
 * [OpenAI Gym documentation](https://gym.openai.com/docs)
 * [Neuroevolution - Wikipedia Article](https://en.wikipedia.org/wiki/Neuroevolution)
 * [Artificial Neural Network - Wikipedia Article](https://en.wikipedia.org/wiki/Artificial_neural_network)
+* [How to choose the number of hidden layers and nodes in a feedforward neural network](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw)
+* [What are the advantages of ReLU over the LeakyReLU (in FFNN)?](https://www.reddit.com/r/MachineLearning/comments/4znzvo/what_are_the_advantages_of_relu_over_the/)
 
 ## Contributors
 

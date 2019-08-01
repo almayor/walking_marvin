@@ -7,73 +7,60 @@ The goal is to train Marvin to walk, using neuroevolution.
 """
 
 # dependencies
-from lib import Population, Config, NeuralNet
 import gym
-from gym import wrappers
-import pickle
+from lib import EvolutGym, Generation, utils
 import pprint
 import sys
+
 
 """
 Main point of entry of the program.
 """
 
-config = Config()
-args = config.parse_args()
-env = gym.make(args["name"])
-pop = Population(args["popul_count"], args["node_counts"])
+# global variables
+
+__name__ = "Marvin-v0"
+__nn_nodes__ = [24, 14, 4]  # default configuration
+__trained_weights__ = "./data/trained_weights.pickle"
+
+# initialise objects
+
+parser = utils.Parser()
+args = parser.parse_args().__dict__
+environment = gym.make(__name__)
+evolut_gym = EvolutGym(environment, args["target"], args["mutation_rate"])
+
+# run program
 
 if args["log"]:
-	sys.stdout = open(args["log_file"], "a+")
-	print("============")
+	log_file = utils.get_log_file(__name__)
+	sys.stdout = open(log_file, "a+")
 	pprint.pprint(args)
 	print("============\n")
 
 if args["load"]:
-	try:
-		with open(args["load"], 'rb') as f:
-			best_weights = pickle.load(f)
-		nnet = NeuralNet(args["node_counts"])
-		nnet.weights = best_weights
-		pop.display(nnet, env, args["display_steps"])
-	except IOError:
-		print("Error loading file!")
-		sys.exit(2)
-
+	evolut_gym.load_display(
+		args["load"],
+		args["display_steps"],
+		args["record"]
+	)
 elif args["walk"]:
-	try:
-		with open(args["precomputed"], 'rb') as f:
-			best_weights = pickle.load(f)
-		nnet = NeuralNet(args["node_counts"])
-		nnet.weights = best_weights
-		pop.display(nnet, env, args["display_steps"])
-	except IOError:
-		print("Error loading precomputed weights (should be in data/precomputed.pickle)")
-		sys.exit(2)
-
+	evolut_gym.load_display(
+		__trained_weights__,
+		args["display_steps"],
+		args["record"]
+	)
 else:
-	best_nnets = []
-	for episode in range(args["max_episodes"]):
-		pop.evaluate(env, args["max_steps"])
-
-		if not args["quiet"]:
-			print("Episode	: {}".format(episode))
-			print("Min fit	: {}".format(pop.min_fit))
-			print("Avg fit	: {}".format(pop.avg_fit))
-			print("Max fit	: {}".format(pop.max_fit))
-			print("==================\n")
-			pop.display(pop.best_nnet, env, args["display_steps"])
-
-		best_nnets.append(pop.best_nnet)
-		if pop.avg_fit > 100:
-			break
-		pop.evolve(args["mutation_rate"])
-
+	generation = Generation(args["popul_size"], __nn_nodes__)
+	evolut_gym.populate(generation)
+	evolut_gym.train_display(
+		args["episodes"],
+		args["train_steps"],
+		args["display_steps"],
+		args["record"],
+	)
 	if args["save"]:
-		with open(args["save"], 'rb') as f:
-			pickle.dump(f, best_weights)
+		evolut_gym.save_best(args["save"])
 
-	if args["video"]:
-		env = wrappers.Monitor(env, args["video_dir"], force=True)
-		for nnet in best_nnets:
-			pop.display(nnet, env, args["display_steps"])
+if args["log"]:
+	sys.stdout.close()

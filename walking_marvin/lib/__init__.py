@@ -1,12 +1,11 @@
-from lib.neural_net import NeuralNet
-from lib.population import Population
-from lib.environment import Marvin
-from lib.config import Config
-from gym import envs
+import gym.envs
+from lib.generation import Generation
+from lib.evolut_gym import EvolutGym
 
-__all__ = ['Config', 'NeuralNet', 'Population', 'Marvin', 'activations']
+__all__ = ['Generation', 'EvolutGym']
 
-envs.registration.register(
+# registering Marvin in the gym
+gym.envs.registration.register(
 	id='Marvin-v0',
 	entry_point='lib.environment:Marvin'
 )

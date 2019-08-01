@@ -5,7 +5,7 @@ with open('requirements.txt', 'r') as f:
 
 setup(
     name='walking_marvin',
-    version='0.1.0',
+    version="0.1.0",
     install_requires=requirements,
     url='github.com/almayor/walking_marvin',
     license='MIT',
