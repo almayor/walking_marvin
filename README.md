@@ -50,7 +50,7 @@ python walking_marvin --help
 	* number of hidden nodes is the average of input and output layers
 	*  `leaky-ReLu` with `a = -0.05` as activation
 	*  `tanh` as output
-	*  He initialisation of both weights and nodes. 
+	*  He initialisation of both weights and biases. 
 
 ### Future directions
 
