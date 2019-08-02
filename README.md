@@ -71,7 +71,7 @@ The following sources helped me when working on this project:
 
 ### Acknowledgements 
 
-This implementation of the project is based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for sharing his code online as an education resource.
+This implementation of the heavily influenced by a similar project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for providing his solution online as an education resource.
 
 ## Contributors
 
