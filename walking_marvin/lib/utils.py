@@ -64,7 +64,7 @@ class Parser(argparse.ArgumentParser):
 			'-e',
 			'--episodes',
 			type=int,
-			default=50,
+			default=200,
 			help='maximum number of evolution episodes',
 			required=False)
 
@@ -103,7 +103,7 @@ class Parser(argparse.ArgumentParser):
 			"-d",
 			"--display-steps",
 			type=int,
-			default=250,
+			default=600,
 			help='if non-zero, display each episode\'s winner for N steps',
 			required=False)
 
