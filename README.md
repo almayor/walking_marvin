@@ -69,7 +69,7 @@ The following sources helped me when working on this project:
 * [What are the advantages of ReLU over the LeakyReLU (in FFNN)?](https://www.reddit.com/r/MachineLearning/comments/4znzvo/what_are_the_advantages_of_relu_over_the/)
 * [Xavier and He Normal (He-et-al) Initialization](https://medium.com/@prateekvishnu/xavier-and-he-normal-he-et-al-initialization-8e3d7a087528)
 
-###Acknowledgements 
+### Acknowledgements 
 
 This implementation of the project is based on an identical project by [JR Aleman](github.com/jraleman/42_Walking_Marvin). My gratitude goes to him for sharing his code online as an education resource.
 
