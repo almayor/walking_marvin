@@ -1,5 +1,3 @@
-# 42 –– self-education
-
 ## Walking Marvin
 
 ### Who is Marvin?
@@ -12,8 +10,7 @@ Marvin is the ship's robot aboard the starship Heart of Gold.
 
 This is a python project, that uses OpenAI Gym with an environment called Marvin.
 The goal is to train Marvin to walk, having the training and walking process.
-The total reward for each episode after training is bigger than 100. During the
-development, we learned how to use neural networks to help Marvin
+During the development, I learned how to use neural networks to help Marvin
 get back on his feet, without using any libraries that do the goal of the
 project for us, like Evostra or Tensorflow.
 
